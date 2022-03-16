@@ -1,0 +1,85 @@
+<h3 style="text-align: center; color: blue;font-size: 50px;font-family: cursive" ><b>Online Hospital Management System</b></h3>
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+
+    <ul class="nav navbar-nav">
+        <li class="active">
+            <a routerLink="/home">Home</a>
+        </li>
+        <li>
+            <a routerLink="/about">About</a>
+        </li>
+        <li>
+                <a routerLink="/contact">Contact</a>
+        </li>
+        <li>
+                <a routerLink="/help">Help</a>
+        </li>
+        <li>
+            <a routerLink="/signin">Signin</a>
+         </li>
+         <li>
+          <a routerLink="/signup">Signup</a>
+       </li>
+       
+     </ul> 
+
+</nav>
+<div class="container">
+        <div class="row">
+            <div class="text-center">
+                <h1>Register Here</h1>
+                <hr>
+            </div>
+            <form [formGroup]="formdata" (ngSubmit)="Register()" role="form">
+               <!-- !registerform="ngForm"-->
+    
+                <div class="col-md-6">
+    
+    
+                    <div class="form-group">
+                        <label style="color: black">Name</label>
+                        <input  type="text" class="form-control" id="name" formControlName="name"
+                            placeholder="Enter name"/>
+                    </div>
+    
+    
+                    <div class="form-group">
+                        <label style="color: black">Email</label>
+                        <input ngModel type="email" class="form-control" id="email" formControlName="email"
+                            placeholder="Eg:abc@hms.com"/>
+                    </div>
+    
+                    <div class="form-group">
+                        <label style="color: black">Password</label>
+                        <input ngModel type="password" class="form-control" id="password" formControlName="password"/>
+                    </div>                  
+    
+                      <div class="form-group">
+                            <label >Role</label>
+                            &nbsp;
+                           
+                            <input ngModel list="Role" id="role" formControlName="role" >
+                            <datalist id="Role">
+                                <option value="DOCTOR"></option>
+                                <option value="RECEPTIONIST"></option>
+                                <option value="PATIENT"></option>
+                                
+                            </datalist>
+                      
+                        </div>
+                 
+    
+                </div>
+                <br>
+                <div class="text-center">
+                    <span class="label ">{{message}}</span>
+                    <br>
+                    <hr style="background-color: black"> 
+                    <button  type="submit" class="btn btn-success">Register</button> &nbsp; &nbsp;
+                    <button   type="reset" class="btn btn-danger">Cancel</button>
+                </div>
+    
+            </form>
+    
+        </div>
+    </div>
